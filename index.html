@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aditya Kumar – Java Backend Developer</title>
+<meta name="description" content="Portfolio of Aditya Kumar, Java backend developer at Sinch in Noida, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f7; --surface:#ffffff; --ink:#14213d; --muted:#4d5b78; --line:#d3dbe8;
+  --accent:#2748e8; --accent-ink:#ffffff; --warm:#e9a62b;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0e1630;--surface:#17213f;--ink:#eaf0ff;--muted:#a3b0cf;--line:#2b3862;--accent:#7f9bff;--accent-ink:#0e1630;--warm:#f2b94a;}
+}
+:root[data-theme="dark"]{--bg:#0e1630;--surface:#17213f;--ink:#eaf0ff;--muted:#a3b0cf;--line:#2b3862;--accent:#7f9bff;--accent-ink:#0e1630;--warm:#f2b94a;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.nav .logo{font:800 20px "Bricolage Grotesque",sans-serif;text-decoration:none}
+.nav nav{display:flex;gap:22px;font-size:15px}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+@media (max-width:620px){.nav nav a:nth-child(n+3){display:none}}
+
+/* hero */
+.hero{padding:56px 0 72px}
+.hero h1{font-size:clamp(52px,11vw,132px);font-weight:800;letter-spacing:-.035em}
+.hero h1 span{display:block;color:var(--accent)}
+.hero p.lead{max-width:34em;font-size:20px;color:var(--muted);margin:28px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.stream{margin-top:56px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 28px}
+.stream .count{font:800 clamp(34px,7vw,64px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stream .cap{color:var(--muted);margin:8px 0 18px;font-size:15px}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--warm));border-radius:99px}
+
+/* sections */
+section{padding:64px 0;border-top:1px solid var(--line)}
+section>.wrap{display:grid;grid-template-columns:200px 1fr;gap:32px}
+section h2{font-size:30px;font-weight:700;letter-spacing:-.01em}
+@media (max-width:760px){section>.wrap{grid-template-columns:1fr;gap:20px}}
+.prose{max-width:38em;font-size:18px}
+.facts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.fact b{display:block;font:800 28px "Bricolage Grotesque",sans-serif}
+.fact span{font-size:14px;color:var(--muted)}
+.role{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.role h3{font-size:24px;font-weight:700}
+.when{color:var(--muted);font-size:15px}
+.where{color:var(--muted);margin:2px 0 16px}
+ul.pts{margin:0;padding-left:20px}
+ul.pts li{margin:0 0 10px;max-width:42em}
+.timeline{border-left:3px solid var(--accent);padding-left:24px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+.proj h3{font-size:26px;margin-bottom:4px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.tags span{font-size:14px;border:1px solid var(--line);border-radius:99px;padding:4px 12px;background:var(--bg)}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:620px){.skills{grid-template-columns:1fr}}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.skill h3{font-size:18px;margin-bottom:6px}
+.skill p{margin:0;color:var(--muted)}
+.contact-list{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:20px}
+.contact-list a{text-decoration-color:var(--accent);text-underline-offset:5px}
+footer{padding:32px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="#top">Aditya Kumar</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>Aditya Kumar<span>builds backends that scale.</span></h1>
+      <p class="lead">Java backend developer at Sinch in Noida. I build services that deliver thousands of reports a day and handle files with millions of rows.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:adityacoding.one@gmail.com">Email me</a>
+        <a class="btn" href="https://linkedin.com/in/imadityak" target="_blank" rel="noopener">View LinkedIn</a>
+      </div>
+      <div class="stream" aria-label="Streaming export test">
+        <div class="count" id="count">0</div>
+        <div class="cap">rows streamed into a single file in my export module test, without loading them all into memory</div>
+        <div class="bar"><i id="fill"></i></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <div>
+    <p class="prose">I’m a Java backend developer with over a year of professional experience building and maintaining high-performance services at Sinch, a global communication technology company. I work with Java, PHP, Spring Boot, Laravel, MySQL and Redis, and I care about clean REST APIs and solid object-oriented design. I was promoted from Trainee to SWE-1 for steady delivery and technical growth.</p>
+    <div class="facts">
+      <div class="fact"><b>1+ year</b><span>professional experience</span></div>
+      <div class="fact"><b>5–6k</b><span>reports delivered daily</span></div>
+      <div class="fact"><b>10M</b><span>rows tested in one file</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2>Experience</h2>
+  <div>
+    <div class="timeline">
+      <div class="role"><h3>Software Engineer I (SWE-1)</h3><span class="when">Feb 2025 – Present</span></div>
+      <p class="where">Sinch, Noida, India</p>
+      <ul class="pts">
+        <li>Contributed to a custom report generation engine that delivers 5,000–6,000 client reports per day by email or SFTP.</li>
+        <li>Work with cross-functional teams across time zones to ship features end to end in Agile sprints.</li>
+        <li>Take part in code reviews, performance profiling and incident triage in production Linux (RHEL) environments.</li>
+        <li>Promoted from Trainee to SWE-1 for strong contributions and ownership across several production services.</li>
+      </ul>
+    </div>
+    <h2 style="margin:56px 0 20px;font-size:26px">Project</h2>
+    <div class="proj">
+      <h3>Report generation engine</h3>
+      <p class="where" style="margin-bottom:14px">Sinch</p>
+      <ul class="pts">
+        <li>Built core modules of a configurable engine that produces and delivers 5,000–6,000 client reports daily by email and SFTP.</li>
+        <li>Added a self-service interface so non-technical users can configure and schedule their own reports, which shortens the time from request to delivery.</li>
+        <li>Connected the engine to internal infrastructure and data sources, automating the flow from data extraction to delivery.</li>
+        <li>Wrote a high-volume export module that streams data instead of loading it into memory. It was tested on 10 million rows in a single file.</li>
+        <li>Used Redis for caching and queue-based job processing to improve throughput and reliability.</li>
+      </ul>
+      <div class="tags"><span>Java</span><span>Redis</span><span>MySQL</span><span>SFTP</span><span>Data streaming</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill"><h3>Languages</h3><p>Java, PHP, SQL, Bash, HTML/CSS</p></div>
+    <div class="skill"><h3>Frameworks</h3><p>Spring Boot, Spring MVC, Laravel</p></div>
+    <div class="skill"><h3>Databases</h3><p>MySQL, Redis</p></div>
+    <div class="skill"><h3>Tools and platforms</h3><p>Git, RHEL / Linux, IntelliJ IDEA</p></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Education</h2>
+  <div>
+    <div class="role"><h3 style="font-size:22px">B.Tech in Computer Science and Engineering</h3><span class="when">2020 – 2024</span></div>
+    <p class="where">Lovely Professional University, Punjab</p>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <div>
+    <p class="prose" style="margin-top:0">Have a role or a project in mind? Get in touch.</p>
+    <ul class="contact-list">
+      <li><a href="mailto:adityacoding.one@gmail.com">adityacoding.one@gmail.com</a></li>
+      <li><a href="tel:+918307986196">+91 83079 86196</a></li>
+      <li><a href="https://linkedin.com/in/imadityak" target="_blank" rel="noopener">linkedin.com/in/imadityak</a></li>
+      <li>Noida, India</li>
+    </ul>
+  </div>
+</div></section>
+
+<div class="wrap"><footer style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+  <span>© 2026 Aditya Kumar</span>
+  <button class="theme" id="theme" type="button">Switch theme</button>
+</footer></div>
+
+<script>
+(function(){
+  var el=document.getElementById('count'),fill=document.getElementById('fill'),T=10000000;
+  var fmt=function(n){return n.toLocaleString('en-IN')};
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){el.textContent=fmt(T);fill.style.width='100%';}
+  else{
+    var s=null,d=2800;
+    (function step(t){
+      if(!s)s=t;var p=Math.min((t-s)/d,1),e=1-Math.pow(1-p,3);
+      el.textContent=fmt(Math.floor(T*e));fill.style.width=(e*100)+'%';
+      if(p<1)requestAnimationFrame(step);
+    })(performance.now());
+  }
+  var root=document.documentElement;
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme',dark?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>
